@@ -91,6 +91,30 @@ make install
 cd ..
 
 #
+# Download and make libnftnl in /usr/local/lib
+#
+
+#wget 
+#https://www.netfilter.org/projects/libnftnl/files/libnftnl-${LIBNFTNL_RELEASE}.tar.bz2
+#tar libnftnl-${LIBNFTNL_RELEASE}.tar.bz2
+#cd libnftnl-${LIBNFTNL_RELEASE}.tar.bz2
+#./configure
+#make
+#make install
+#cd ..
+#
+# Download and compile nftables
+#
+
+#wget 
+#https://www.netfilter.org/projects/nftables/files/nftables-${NFTABLES_RELEASE}.tar.bz2
+#tar -xvf nftables-${NFTABLES_RELEASE}.tar.bz2
+#cd nftables-${NFTABLES_RELEASE}
+#./configure
+#make
+#make install
+#cd ..
+#
 # Download and compile conntrack-tools in /usr/local/sbin
 #
 
@@ -113,3 +137,21 @@ cd ..
 #make
 #make install
 #cd ..
+
+#
+# Download and compile iptables
+#
+
+wget https://www.netfilter.org/projects/iptables/files/iptables-${IPTABLES_RELEASE}.tar.bz2
+tar -xvf iptables-${IPTABLES_RELEASE}.tar.bz2
+cd iptables-${IPTABLES_RELEASE}
+./configure --disable-nftables --enable-libipq --with-xtlibdir=/lib/xtables
+make
+make install
+cd ..
+
+tar -czvf lib.tar.gz /usr/local/lib
+tar -czvf sbin.tar.gz /usr/local/sbin
+
+cp lib.tar.gz /data/
+cp sbin.tar.gz /data/
