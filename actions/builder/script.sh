@@ -150,8 +150,23 @@ make
 make install
 cd ..
 
-tar -czvf lib.tar.gz /usr/local/lib
-tar -czvf sbin.tar.gz /usr/local/sbin
+#apt install -yqq ipset
+#cp /sbin/ipset /usr/local/sbin
 
-cp lib.tar.gz /data/
-cp sbin.tar.gz /data/
+wget http://www.dest-unreach.org/socat/download/socat-${SOCAT_RELASE}.tar.gz
+tar -xvf socat-${SOCAT_RELASE}.tar.gz
+cd socat-${SOCAT_RELASE}
+./configure
+make
+make install
+cd ..
+
+tar -czvf libs.tar.gz /usr/local/lib
+tar -czvf iptables.tar.gz /usr/local/sbin/ip* /usr/local/sbin/xtables-legacy-multi
+tar -czvf conntrack.tar.gz /usr/local/sbin/conntrack*
+tar -czvf consat.tar.gz /usr/local/bin
+
+cp libs.tar.gz /data/
+cp iptables.tar.gz /data/
+cp conntrack.tar.gz /data/
+cp consat.tar.gz /data/

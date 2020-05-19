@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-RUN apt update && apt install -yqq gcc tar wget bison flex make pkg-config
+RUN apt update && apt install -yqq gcc tar wget bison autotools-dev automake libtool flex make pkg-config 
 ENV LIBNFNETLINK_RELEASE 1.0.1
 ENV LIBMNL_RELEASE 1.0.4
 ENV LIBNETFILTER_ACC_RELEASE 1.0.3
@@ -13,6 +13,8 @@ ENV CONNTRACK_TOOLS_RELEASE 1.4.6
 ENV IPSET_RELEASE 7.6
 ENV NFTABLES_RELEASE 0.9.4
 ENV IPTABLES_RELEASE 1.8.4
+ENV SOCAT_RELASE 1.7.3.4
 WORKDIR /sources
 COPY script.sh .
 RUN chmod +x script.sh
+CMD ["/sources/script.sh"]
