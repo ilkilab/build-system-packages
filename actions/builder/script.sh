@@ -164,9 +164,9 @@ cd ..
 tar -czvf libs.tar.gz /usr/local/lib
 tar -czvf iptables.tar.gz /usr/local/sbin/ip* /usr/local/sbin/xtables-legacy-multi
 tar -czvf conntrack.tar.gz /usr/local/sbin/conntrack*
-tar -czvf consat.tar.gz /usr/local/bin
+tar -czvf socat.tar.gz /usr/local/bin
 
 cp libs.tar.gz /data/
 cp iptables.tar.gz /data/
 cp conntrack.tar.gz /data/
-cp consat.tar.gz /data/
+cp socat.tar.gz /data/
