@@ -166,7 +166,7 @@ tar -czvf iptables.tar.gz /usr/local/sbin/ip* /usr/local/sbin/xtables-legacy-mul
 tar -czvf conntrack.tar.gz /usr/local/sbin/conntrack*
 tar -czvf socat.tar.gz /usr/local/bin
 mkdir -p /data/
-cp libs.tar.gz /data/
-cp iptables.tar.gz /data/
-cp conntrack.tar.gz /data/
-cp socat.tar.gz /data/
+cp libs.tar.gz /sources/
+cp iptables.tar.gz /sources/
+cp conntrack.tar.gz /sources/
+cp socat.tar.gz /sources/
